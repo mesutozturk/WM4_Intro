@@ -90,7 +90,6 @@ namespace Degiskenler
             obj = karakter;
             obj = haftaninGunu;
             obj = tarih;
-
         }
     }
 }
