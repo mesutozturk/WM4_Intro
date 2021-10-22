@@ -117,12 +117,24 @@ namespace KararYapilariVeDonguler
                 Console.WriteLine(sonraki);
                 gunSayisi++;
             }
-
+            Console.Clear();
             sayac = 0; gunSayisi = 0;
             do
             {
-
+                DateTime sonraki = tarih.AddDays(sayac);
+                sayac++;
+                if (sonraki.DayOfWeek == DayOfWeek.Saturday || sonraki.DayOfWeek == DayOfWeek.Sunday)
+                    continue;
+                Console.WriteLine(sonraki);
+                gunSayisi++;
             } while (gunSayisi < 100);
+
+            // break continue return
+
+            for (int i = 0; i < 1000; i++)
+            {
+                Console.WriteLine(i);
+            }
         }
     }
 }
