@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputIslemleri", "InputIsle
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomNesnesi", "RandomNesnesi\RandomNesnesi.csproj", "{1A907EFA-D65F-44FB-A2E5-372EEFC2AB59}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SekilCizme", "SekilCizme\SekilCizme.csproj", "{A60D69E8-07DD-4528-BEEB-9A957DB74926}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{1A907EFA-D65F-44FB-A2E5-372EEFC2AB59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A907EFA-D65F-44FB-A2E5-372EEFC2AB59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A907EFA-D65F-44FB-A2E5-372EEFC2AB59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A60D69E8-07DD-4528-BEEB-9A957DB74926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A60D69E8-07DD-4528-BEEB-9A957DB74926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A60D69E8-07DD-4528-BEEB-9A957DB74926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A60D69E8-07DD-4528-BEEB-9A957DB74926}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{A089E933-1173-4EC5-B88F-6660ED50ED0F} = {9960F98C-3B4A-47FD-85D2-98216190025C}
 		{1ECA1968-8013-45AD-A441-EDB630ED0814} = {04E71695-6502-4A0F-8ADD-014D0CB36EAF}
 		{1A907EFA-D65F-44FB-A2E5-372EEFC2AB59} = {04E71695-6502-4A0F-8ADD-014D0CB36EAF}
+		{A60D69E8-07DD-4528-BEEB-9A957DB74926} = {04E71695-6502-4A0F-8ADD-014D0CB36EAF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1AB4EDC3-6721-4BA7-8C33-9CF35518AC83}
