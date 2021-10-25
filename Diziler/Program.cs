@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Diziler
 {
@@ -51,7 +53,30 @@ namespace Diziler
 
             Array.Resize(ref sayilar, 20);
 
+            // ArrayList
+            ArrayList liste1 = new ArrayList();
+            liste1.Add(123);
+            liste1.Add("Kamil");
+            liste1.Add(true);
+            liste1.Add(null);
+            liste1.Add(DateTime.Now);
+            liste1.Add(matris);
+
+            
+
+            //Generic List
+
+            List<int> liste2 = new List<int>();
+            
+            liste2.Add(5);
+            liste2.Add(55);
+            liste2.Add(25);
+            
+            //Linq 
+
+            
 
         }
     }
+
 }
