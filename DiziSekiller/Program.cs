@@ -18,27 +18,16 @@ namespace DiziSekiller
                 Console.WriteLine(ex.Message);
             }
 
-            int x = matris.GetLength(0);
-            int y = matris.GetLength(1);
-            for (int satir = x - 1; satir >= 0; satir--)
+            for (int satir = 0; satir < matris.GetLength(0); satir++)
             {
-                for (int sutun = 0; sutun < y; sutun++)
+                for (int sutun = 0; sutun < matris.GetLength(1); sutun++)
                 {
-                    matris[satir, sutun] = true;
-                    int boslukSayisi = (x - 1 - satir) * 2;
-
-                    int bosluk2 = boslukSayisi / 2;
-                    if (bosluk2 == 0) continue;
-                    for (int i = 0; i < bosluk2; i++)
+                    if ((satir + sutun >= matris.GetLength(0) - 1  && sutun - satir <= matris.GetLength(0) -1 ))
                     {
-                        matris[satir, i] = false;
-                    }
-
-                    for (int i = y - 1; i > y - 1 - bosluk2; i--)
-                    {
-                        matris[satir, i] = false;
+                        matris[satir, sutun] = true;
                     }
                 }
+            
             }
 
             //ekrana yazdır
@@ -51,6 +40,28 @@ namespace DiziSekiller
                 }
                 Console.WriteLine();
             }
+
+            //Console.Write("Uzunluk : ");
+            //int kenarUzunlugu = Convert.ToInt32(Console.ReadLine());
+            //int ortaNokta = kenarUzunlugu - 1;
+            //int taban = kenarUzunlugu * 2 - 1;
+            //for (int i = 0; i < kenarUzunlugu; i++)
+            //{
+            //    for (int k = 0; k < taban; k++)
+            //    {
+            //        if ((i + k >= ortaNokta && k - i <= ortaNokta))
+            //        {
+            //            Console.Write("*");
+            //        }
+            //        else if (i == ortaNokta)
+            //            Console.Write("*");
+            //        else
+            //            Console.Write(" ");
+
+            //    }
+            //    Console.WriteLine();
+            //}
+            //Console.ReadKey();
         }
     }
 }
