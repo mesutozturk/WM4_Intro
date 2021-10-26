@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZarOyunu", "ZarOyunu\ZarOyu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeepBeep", "BeepBeep\BeepBeep.csproj", "{0AF9B059-2EA0-4307-9ABB-6710CB57C74C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdamAsmaca", "AdamAsmaca\AdamAsmaca.csproj", "{400837E5-FCB0-4124-86AE-7E0232D0E825}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{0AF9B059-2EA0-4307-9ABB-6710CB57C74C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AF9B059-2EA0-4307-9ABB-6710CB57C74C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AF9B059-2EA0-4307-9ABB-6710CB57C74C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{400837E5-FCB0-4124-86AE-7E0232D0E825}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{400837E5-FCB0-4124-86AE-7E0232D0E825}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{400837E5-FCB0-4124-86AE-7E0232D0E825}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{400837E5-FCB0-4124-86AE-7E0232D0E825}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,6 +105,7 @@ Global
 		{5140F3C2-15FD-4596-A5DE-61B012D04837} = {0B45666E-6D11-4A3F-A8CC-1612F2CDE7D2}
 		{286915AD-23A7-4CF0-A09E-E60FE58772F7} = {0B45666E-6D11-4A3F-A8CC-1612F2CDE7D2}
 		{0AF9B059-2EA0-4307-9ABB-6710CB57C74C} = {0B45666E-6D11-4A3F-A8CC-1612F2CDE7D2}
+		{400837E5-FCB0-4124-86AE-7E0232D0E825} = {0B45666E-6D11-4A3F-A8CC-1612F2CDE7D2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1AB4EDC3-6721-4BA7-8C33-9CF35518AC83}
