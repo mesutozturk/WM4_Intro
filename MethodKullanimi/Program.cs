@@ -17,6 +17,13 @@ namespace MethodKullanimi
             double alan = AlanHesapla(5);
             alan = AlanHesapla(3, 4);
             alan = AlanHesapla(5d);
+            int sonuc = Topla(Topla(3, 5), 5) + Topla(9, 7);
+            int[] sayilar = { 3, 5, 6, 5, 8, 7, 4, 5, 5, 9, 8, 7, 7, 8, 32, 5, 5 };
+            sonuc = Topla(new[] { 3, 5, 6, 5, 8, 7, 4, 5, 5, 9, 8, 7, 7, 8, 32, 5, 5 }, 1);
+            sonuc = Topla(sayilar, 1);
+            sonuc = Topla(3, 5, 6, 5, 8, 7, 4, 5, 5, 9, 8, 7, 7, 8, 32, 5, 5);
+            Console.WriteLine(sonuc);
+            
         }
         /// <summary>
         /// Karenin alanını hesaplayan metod.
@@ -38,7 +45,6 @@ namespace MethodKullanimi
         {
             return kenar1 * kenar2;
         }
-
         /// <summary>
         /// Çemberin alanını hesaplayan method
         /// </summary>
@@ -48,6 +54,30 @@ namespace MethodKullanimi
         static double AlanHesapla(double r, double pi = Math.PI)
         {
             return r * r * pi;
+        }
+
+        static int Topla(int a, int b)
+        {
+            return a + b;
+        }
+
+        static int Topla(int[] sayilar, int yuvarlama)
+        {
+            int sonuc = 0;
+            foreach (int sayi in sayilar)
+            {
+                sonuc += sayi;
+            }
+            return sonuc;
+        }
+        static int Topla(double yuvarlama, params int[] sayilar)
+        {
+            int sonuc = 0;
+            foreach (int sayi in sayilar)
+            {
+                sonuc += sayi;
+            }
+            return sonuc;
         }
     }
 }
