@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
+using System.Collections.Generic;
 
 namespace AdamAsmaca
 {
@@ -20,6 +20,8 @@ namespace AdamAsmaca
                     ekran[i] = '-';
                 }
 
+                List<char> oncekiTahminler = new List<char>();
+
                 do
                 {
                     //ekranı yazdır
@@ -35,13 +37,18 @@ namespace AdamAsmaca
                     if (!string.IsNullOrEmpty(tahmin) && tahmin.Length == 1) //harf tahmini
                     {
                         char harf = tahmin.ToLower()[0];
-                        for (int i = 0; i < seciliSoru.Length; i++)
+                        bool girildiMi = oncekiTahminler.Contains(harf);
+                        if (!girildiMi)
                         {
-                            if (seciliSoru[i] == harf)
+                            for (int i = 0; i < seciliSoru.Length; i++)
                             {
-                                dogruMu = true;
-                                ekran[i] = harf;
-                                bilinen++;
+                                if (seciliSoru[i] == harf)
+                                {
+                                    oncekiTahminler.Add(harf);
+                                    dogruMu = true;
+                                    ekran[i] = harf;
+                                    bilinen++;
+                                }
                             }
                         }
                     }
