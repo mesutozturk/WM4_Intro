@@ -17,7 +17,7 @@ namespace SayiTahminOyunu
                     {
                         giris = int.Parse(Console.ReadLine());
                     }
-                    catch (Exception ex)
+                    catch
                     {
                         Console.WriteLine("Yanlış bir ifade girdiniz");
                         continue;
@@ -26,12 +26,13 @@ namespace SayiTahminOyunu
                     {
                         tahminSayisi++;
                     }
-                    
+
                     if (giris == rastgeleSayi)
                     {
                         Console.WriteLine("Tebrikler " + tahminSayisi + ". Denemede Bildiniz");
                         break;
-                    } else if (giris > rastgeleSayi)
+                    }
+                    else if (giris > rastgeleSayi)
                     {
                         Console.WriteLine("Tahminizi Düşürün");
                     }

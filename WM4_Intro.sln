@@ -29,6 +29,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gün 4", "Gün 4", "{0B4566
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SayiTahminOyunu", "SayiTahminOyunu\SayiTahminOyunu.csproj", "{5140F3C2-15FD-4596-A5DE-61B012D04837}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZarOyunu", "ZarOyunu\ZarOyunu.csproj", "{286915AD-23A7-4CF0-A09E-E60FE58772F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{5140F3C2-15FD-4596-A5DE-61B012D04837}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5140F3C2-15FD-4596-A5DE-61B012D04837}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5140F3C2-15FD-4596-A5DE-61B012D04837}.Release|Any CPU.Build.0 = Release|Any CPU
+		{286915AD-23A7-4CF0-A09E-E60FE58772F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{286915AD-23A7-4CF0-A09E-E60FE58772F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{286915AD-23A7-4CF0-A09E-E60FE58772F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{286915AD-23A7-4CF0-A09E-E60FE58772F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +91,7 @@ Global
 		{0AC5F63D-1DA1-4B14-B67A-10ADD9749765} = {75F48C15-4A07-43FE-B579-D801146B5A50}
 		{EB06AEAA-0FDE-434B-84E4-8F1842BC6A93} = {75F48C15-4A07-43FE-B579-D801146B5A50}
 		{5140F3C2-15FD-4596-A5DE-61B012D04837} = {0B45666E-6D11-4A3F-A8CC-1612F2CDE7D2}
+		{286915AD-23A7-4CF0-A09E-E60FE58772F7} = {0B45666E-6D11-4A3F-A8CC-1612F2CDE7D2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1AB4EDC3-6721-4BA7-8C33-9CF35518AC83}
