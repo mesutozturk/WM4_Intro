@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeepBeep", "BeepBeep\BeepBe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdamAsmaca", "AdamAsmaca\AdamAsmaca.csproj", "{400837E5-FCB0-4124-86AE-7E0232D0E825}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MethodKullanimi", "MethodKullanimi\MethodKullanimi.csproj", "{81D7B0E8-AA62-4493-8DDE-B004C8CF1986}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -89,6 +91,10 @@ Global
 		{400837E5-FCB0-4124-86AE-7E0232D0E825}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{400837E5-FCB0-4124-86AE-7E0232D0E825}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{400837E5-FCB0-4124-86AE-7E0232D0E825}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81D7B0E8-AA62-4493-8DDE-B004C8CF1986}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81D7B0E8-AA62-4493-8DDE-B004C8CF1986}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81D7B0E8-AA62-4493-8DDE-B004C8CF1986}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81D7B0E8-AA62-4493-8DDE-B004C8CF1986}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -106,6 +112,7 @@ Global
 		{286915AD-23A7-4CF0-A09E-E60FE58772F7} = {0B45666E-6D11-4A3F-A8CC-1612F2CDE7D2}
 		{0AF9B059-2EA0-4307-9ABB-6710CB57C74C} = {0B45666E-6D11-4A3F-A8CC-1612F2CDE7D2}
 		{400837E5-FCB0-4124-86AE-7E0232D0E825} = {0B45666E-6D11-4A3F-A8CC-1612F2CDE7D2}
+		{81D7B0E8-AA62-4493-8DDE-B004C8CF1986} = {0B45666E-6D11-4A3F-A8CC-1612F2CDE7D2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1AB4EDC3-6721-4BA7-8C33-9CF35518AC83}
