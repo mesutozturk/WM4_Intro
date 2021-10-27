@@ -112,6 +112,11 @@ namespace AdresDefteri
                 return DateTime.Now.Year - this.DogumTarihi.Year;
             }
         }
+
+        public override string ToString()
+        {
+            return $"{this.Ad} {this.Soyad} - {this.Yas}";
+        }
     }
     interface IKisi { }
 

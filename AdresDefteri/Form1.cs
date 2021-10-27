@@ -42,6 +42,7 @@ namespace AdresDefteri
                 yeniKisi.Tckn = txtTckn.Text;
 
                 kisiler.Add(yeniKisi);
+                lstKisiler.Items.Add(yeniKisi.ToString());
             }
             catch (Exception ex)
             {
