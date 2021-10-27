@@ -17,6 +17,7 @@ namespace AdresDefteri
 
         private string _ad;
         private string _soyad;
+        private string _tckn;
 
         //encapsulation
 
@@ -75,6 +76,30 @@ namespace AdresDefteri
             }
         }
 
+        public string Tckn
+        {
+            set
+            {
+                if (value.Length != 11)
+                    throw new Exception("TCKN 11 haneli olmalıdır!");
+
+                foreach (char harf in value)
+                    if (!char.IsDigit(harf))
+                        throw new Exception("TCKN sadece rakamlardan oluşabilir");
+
+                int ilk = int.Parse(value.Substring(0, 1));
+                int son = int.Parse(value.Substring(10, 1));
+
+                if (ilk == 0)
+                    throw new Exception("TCKN 0 ile başlayamaz!");
+                if (son % 2 == 1)
+                    throw new Exception("TCKN son rakamı çift olmalıdır!");
+
+                _tckn = value;
+
+            }
+            get { return _tckn; }
+        }
     }
     interface IKisi { }
 
