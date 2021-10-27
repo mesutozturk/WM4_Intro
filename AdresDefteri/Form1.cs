@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using AdresDefteri.Models;
 
 namespace AdresDefteri
@@ -15,9 +16,16 @@ namespace AdresDefteri
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
-            kisi.ad = "Kamil";
-            kisi.soyad = "234092384"; // set
-            MessageBox.Show(kisi.soyad); //get
+            try
+            {
+                kisi.Ad = "Kamil";
+                kisi.Soyad = "³Fıdıl";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Bir hata oluştu: {ex.Message}");
+            } // set
+            MessageBox.Show(kisi.Soyad); //get
         }
     }
 }
