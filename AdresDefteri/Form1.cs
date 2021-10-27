@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using AdresDefteri.Models;
 
@@ -27,6 +28,25 @@ namespace AdresDefteri
             //    MessageBox.Show($"Bir hata oluştu: {ex.Message}");
             //} // set
             //MessageBox.Show($"Kişinin yaşı: {kisi.Yas}"); //get
+        }
+
+        private List<Kisi> kisiler = new List<Kisi>();
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            Kisi yeniKisi = new Kisi();
+            try
+            {
+                yeniKisi.Ad = txtAd.Text;
+                yeniKisi.Soyad = txtSoyad.Text;
+                yeniKisi.DogumTarihi = dtpDogumTarihi.Value;
+                yeniKisi.Tckn = txtTckn.Text;
+
+                kisiler.Add(yeniKisi);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Bir Hata Oluştu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
