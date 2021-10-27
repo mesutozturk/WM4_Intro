@@ -43,6 +43,8 @@ namespace AdresDefteri
 
                 kisiler.Add(yeniKisi);
                 lstKisiler.Items.Add(yeniKisi.ToString());
+
+                //yeniKisi.OlusturulmaZamani= DateTime.Now.AddDays(1);
             }
             catch (Exception ex)
             {
