@@ -16,16 +16,17 @@ namespace AdresDefteri
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
-            try
-            {
-                kisi.Ad = "Kamil";
-                kisi.Soyad = "³Fıdıl";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Bir hata oluştu: {ex.Message}");
-            } // set
-            MessageBox.Show(kisi.Soyad); //get
+            //try
+            //{
+            //    kisi.Ad = "Kamil";
+            //    kisi.Soyad = "³Fıdıl";
+            //    kisi.DogumTarihi = new DateTime(1985, 5, 20);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show($"Bir hata oluştu: {ex.Message}");
+            //} // set
+            //MessageBox.Show($"Kişinin yaşı: {kisi.Yas}"); //get
         }
     }
 }

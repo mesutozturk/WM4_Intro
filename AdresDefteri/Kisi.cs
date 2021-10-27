@@ -15,9 +15,12 @@ namespace AdresDefteri
 
         //Fields
 
+        #region Fields
         private string _ad;
         private string _soyad;
         private string _tckn;
+        //private DateTime _dogumTarihi;
+        #endregion
 
         //encapsulation
 
@@ -96,9 +99,18 @@ namespace AdresDefteri
                     throw new Exception("TCKN son rakamı çift olmalıdır!");
 
                 _tckn = value;
-
             }
             get { return _tckn; }
+        } //full property
+
+        public DateTime DogumTarihi { get; set; } //auto property
+
+        public int Yas
+        {
+            get
+            {
+                return DateTime.Now.Year - this.DogumTarihi.Year;
+            }
         }
     }
     interface IKisi { }
