@@ -14,5 +14,9 @@
         {
             return base.CevreHesapla() / 2 + base.KosegenHesapla();
         }
+        public override string ToString()
+        {
+            return "DikÜçgen " + AlanHesapla() + "br²";
+        }
     }
 }

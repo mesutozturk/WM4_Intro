@@ -19,18 +19,48 @@ namespace Kalitim
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Kare k1 = new Kare(10);
-            k1.X = 10;
-            double kareAlani = k1.AlanHesapla();
-            //MessageBox.Show("Karenin alanı: " + kareAlani);
+            Sekil k1 = new Kare(10);
+            Sekil k2 = new Kare(5);
+            Sekil d1 = new Dikdortgen(3, 4);
+            Sekil d2 = new Dikdortgen(5, 12);
+            Sekil da1 = new Daire(7);
+            Sekil da2 = new Daire(8);
+            Sekil u1 = new DikUcgen(6, 8);
+            Sekil u2 = new DikUcgen(10, 24);
 
-            Dikdortgen d1 = new Dikdortgen(3, 4);
-            double dikdortgenAlani = d1.AlanHesapla();
-            MessageBox.Show("Dikdörtgenin alanı: " + dikdortgenAlani);
+            lstSekiller.Items.Add(k1);
+            lstSekiller.Items.Add(k2);
+            lstSekiller.Items.Add(d1);
+            lstSekiller.Items.Add(d2);
+            lstSekiller.Items.Add(da1);
+            lstSekiller.Items.Add(da2);
+            lstSekiller.Items.Add(u1);
+            lstSekiller.Items.Add(u2);
+        }
 
-            //Sekil sekil1 = new Sekil();
-            //sekil1.X = 20;
-            //double alan = sekil1.AlanHesapla();
+        private void lstSekiller_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstSekiller.SelectedItem == null) return;
+
+            //Sekil seciliSekil = lstSekiller.SelectedItem as Sekil;
+            Sekil seciliSekil = (Sekil)lstSekiller.SelectedItem;
+
+            if (seciliSekil is Kare)
+            {
+
+            }
+            else if (seciliSekil is Dikdortgen)
+            {
+                Dikdortgen dd = seciliSekil as Dikdortgen;
+                
+            }
+            else if (seciliSekil is Daire dd)
+            {
+                this.Text = dd.Cap().ToString();
+            }
+
+            lblDetay.Text =
+                $"Alanı: {seciliSekil.AlanHesapla()}\nÇevresi: {seciliSekil.CevreHesapla()}\nKöşegen Uzunluğu:{seciliSekil.KosegenHesapla()}";
         }
     }
 }

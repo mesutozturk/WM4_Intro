@@ -29,5 +29,9 @@ namespace Kalitim
         {
             return Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2));
         }
+        public override string ToString()
+        {
+            return "Dikdörtgen " + AlanHesapla() + "br²";
+        }
     }
 }
