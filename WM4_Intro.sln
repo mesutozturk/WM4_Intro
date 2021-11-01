@@ -45,9 +45,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IlkForm", "IlkForm\IlkForm.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gün 5", "Gün 5", "{3F009251-5CB1-4BB0-BBD1-13CE9853963E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdresDefteri", "AdresDefteri\AdresDefteri.csproj", "{8EF8A23A-8B8B-4B19-9DD8-00EF03A1F57B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdresDefteri", "AdresDefteri\AdresDefteri.csproj", "{8EF8A23A-8B8B-4B19-9DD8-00EF03A1F57B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdresDefteri.Models", "AdresDefteri.Models\AdresDefteri.Models.csproj", "{1D60E03A-2133-48E1-9F7E-0716E3A3CFC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdresDefteri.Models", "AdresDefteri.Models\AdresDefteri.Models.csproj", "{1D60E03A-2133-48E1-9F7E-0716E3A3CFC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gün 6", "Gün 6", "{D807C515-A88F-4095-A5A2-6CD5F32036F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kalitim", "Kalitim\Kalitim.csproj", "{5CDA9319-8041-49F7-8B2C-3230104465E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -127,6 +131,10 @@ Global
 		{1D60E03A-2133-48E1-9F7E-0716E3A3CFC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D60E03A-2133-48E1-9F7E-0716E3A3CFC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D60E03A-2133-48E1-9F7E-0716E3A3CFC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CDA9319-8041-49F7-8B2C-3230104465E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CDA9319-8041-49F7-8B2C-3230104465E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CDA9319-8041-49F7-8B2C-3230104465E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CDA9319-8041-49F7-8B2C-3230104465E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -150,6 +158,7 @@ Global
 		{65835CF6-8A6C-408E-BF91-03B63A89D112} = {0B45666E-6D11-4A3F-A8CC-1612F2CDE7D2}
 		{8EF8A23A-8B8B-4B19-9DD8-00EF03A1F57B} = {3F009251-5CB1-4BB0-BBD1-13CE9853963E}
 		{1D60E03A-2133-48E1-9F7E-0716E3A3CFC3} = {3F009251-5CB1-4BB0-BBD1-13CE9853963E}
+		{5CDA9319-8041-49F7-8B2C-3230104465E9} = {D807C515-A88F-4095-A5A2-6CD5F32036F4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1AB4EDC3-6721-4BA7-8C33-9CF35518AC83}
