@@ -2,32 +2,31 @@
 
 namespace Kalitim
 {
-    public class Daire
+    public class Daire : Sekil
     {
         public Daire()
         {
 
         }
 
-        public Daire(double r)
+        public Daire(double x)
         {
-            this.R = r;
-        }
-        public double R { get; set; }
-
-        public double AlanHesapla()
-        {
-            return Math.Pow(R, 2) * Math.PI;
+            this.X = X;
         }
 
-        public double CevreHesapla()
+        public override double AlanHesapla()
         {
-            return 2 * Math.PI * R;
+            return Math.Pow(X, 2) * Math.PI;
         }
 
-        //public double KosegenHesapla()
-        //{
-        //    return 2 * R;
-        //}
+        public override double CevreHesapla()
+        {
+            return 2 * Math.PI * X;
+        }
+
+        public override double KosegenHesapla()
+        {
+            return 2 * X;
+        }
     }
 }

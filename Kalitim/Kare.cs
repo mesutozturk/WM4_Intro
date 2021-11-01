@@ -2,7 +2,7 @@
 
 namespace Kalitim
 {
-    public class Kare
+    public class Kare : Sekil
     {
         public Kare(double x)
         {
@@ -13,21 +13,10 @@ namespace Kalitim
         {
 
         }
-        public double X { get; set; }
 
-        public double AlanHesapla()
+        public override double AlanHesapla()
         {
             return X * X;
-        }
-
-        public double CevreHesapla()
-        {
-            return 4 * X;
-        }
-
-        public double KosegenHesapla()
-        {
-            return X * Math.Sqrt(2);
         }
     }
 }

@@ -2,21 +2,18 @@
 
 namespace Kalitim
 {
-    public class Sekil
+    public abstract class Sekil
     {
         public double X { get; set; }
 
-        public double AlanHesapla()
-        {
-            return X * X;
-        }
+        public abstract double AlanHesapla();
 
-        public double CevreHesapla()
+        public virtual double CevreHesapla()
         {
             return 4 * X;
         }
 
-        public double KosegenHesapla()
+        public virtual double KosegenHesapla()
         {
             return Math.Sqrt(2) * X;
         }
