@@ -42,13 +42,60 @@ namespace AdresDefteri
                 yeniKisi.Tckn = txtTckn.Text;
 
                 kisiler.Add(yeniKisi);
-                lstKisiler.Items.Add(yeniKisi.ToString());
+                //lstKisiler.Items.Add(yeniKisi.ToString());
+                ListeyiDoldur();
 
                 //yeniKisi.OlusturulmaZamani= DateTime.Now.AddDays(1);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Bir Hata Oluştu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ListeyiDoldur()
+        {
+            lstKisiler.Items.Clear();
+            foreach (Kisi kisi1 in kisiler)
+            {
+                lstKisiler.Items.Add(kisi1);
+            }
+        }
+
+        private Kisi seciliKisi;
+        private void lstKisiler_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstKisiler.SelectedItem == null) return;
+
+            seciliKisi = lstKisiler.SelectedItem as Kisi;
+
+            txtAd.Text = seciliKisi.Ad;
+            txtSoyad.Text = seciliKisi.Soyad;
+            txtTckn.Text = seciliKisi.Tckn;
+            dtpDogumTarihi.Value = seciliKisi.DogumTarihi;
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            if (seciliKisi == null) return;
+
+            seciliKisi.Ad = txtAd.Text;
+            seciliKisi.Soyad = txtSoyad.Text;
+            seciliKisi.DogumTarihi = dtpDogumTarihi.Value;
+            seciliKisi.Tckn = txtTckn.Text;
+            ListeyiDoldur();
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (seciliKisi == null) return;
+
+            DialogResult cevap = MessageBox.Show($"{seciliKisi} yi silmek istiyor musunuz?", "Silme onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (cevap == DialogResult.Yes)
+            {
+                kisiler.Remove(seciliKisi);
+                ListeyiDoldur();
             }
         }
     }

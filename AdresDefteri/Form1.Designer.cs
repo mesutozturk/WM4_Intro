@@ -39,6 +39,8 @@ namespace AdresDefteri
             this.dtpDogumTarihi = new System.Windows.Forms.DateTimePicker();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.lstKisiler = new System.Windows.Forms.ListBox();
+            this.btnGuncelle = new System.Windows.Forms.Button();
+            this.btnSil = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -109,7 +111,7 @@ namespace AdresDefteri
             // 
             this.btnKaydet.Location = new System.Drawing.Point(126, 142);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(250, 91);
+            this.btnKaydet.Size = new System.Drawing.Size(125, 83);
             this.btnKaydet.TabIndex = 3;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -123,12 +125,35 @@ namespace AdresDefteri
             this.lstKisiler.Name = "lstKisiler";
             this.lstKisiler.Size = new System.Drawing.Size(311, 484);
             this.lstKisiler.TabIndex = 4;
+            this.lstKisiler.SelectedIndexChanged += new System.EventHandler(this.lstKisiler_SelectedIndexChanged);
+            // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.Location = new System.Drawing.Point(251, 142);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(125, 83);
+            this.btnGuncelle.TabIndex = 5;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
+            // btnSil
+            // 
+            this.btnSil.Location = new System.Drawing.Point(182, 259);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(134, 75);
+            this.btnSil.TabIndex = 6;
+            this.btnSil.Text = "Sil";
+            this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(720, 532);
+            this.Controls.Add(this.btnSil);
+            this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.lstKisiler);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.dtpDogumTarihi);
@@ -159,6 +184,8 @@ namespace AdresDefteri
         private System.Windows.Forms.DateTimePicker dtpDogumTarihi;
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.ListBox lstKisiler;
+        private System.Windows.Forms.Button btnGuncelle;
+        private System.Windows.Forms.Button btnSil;
     }
 }
 
