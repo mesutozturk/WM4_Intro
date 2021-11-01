@@ -4,14 +4,13 @@ namespace Kalitim
 {
     public class Daire : Sekil
     {
-        public Daire()
-        {
+        //public Daire()
+        //{
 
-        }
+        //}
 
-        public Daire(double x)
+        public Daire(double x) : base(x)
         {
-            this.X = X;
         }
 
         public override double AlanHesapla()

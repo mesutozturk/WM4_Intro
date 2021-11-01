@@ -1,18 +1,16 @@
-﻿using System;
-
-namespace Kalitim
+﻿namespace Kalitim
 {
     public class Kare : Sekil
     {
-        public Kare(double x)
-        {
-            this.X = x;
-        }
-
-        public Kare()
+        public Kare(double x) : base(x)
         {
 
         }
+
+        //public Kare()
+        //{
+
+        //}
 
         public override double AlanHesapla()
         {
