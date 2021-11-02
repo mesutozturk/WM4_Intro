@@ -82,6 +82,7 @@ namespace PaymentMethod
             // 
             // cmbYil
             // 
+            this.cmbYil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbYil.FormattingEnabled = true;
             this.cmbYil.Location = new System.Drawing.Point(162, 88);
             this.cmbYil.Name = "cmbYil";
@@ -90,6 +91,7 @@ namespace PaymentMethod
             // 
             // cmbAy
             // 
+            this.cmbAy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAy.FormattingEnabled = true;
             this.cmbAy.Location = new System.Drawing.Point(104, 88);
             this.cmbAy.Name = "cmbAy";

@@ -36,7 +36,7 @@ namespace PaymentMethod
         private void cmbPaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
         {
             PaymentMethods method = Enum.Parse<PaymentMethods>(cmbPaymentMethod.SelectedItem.ToString());
-            //PaymentMethods method = (PaymentMethods)Enum.Parse(cmbPaymentMethod.SelectedItem.ToString());
+            PaymentMethods method2 = (PaymentMethods)Enum.Parse(typeof(PaymentMethods),cmbPaymentMethod.SelectedItem.ToString()); //2. yöntem
             lstTaksitler.Items.Clear();
             this.Text = $"{sepetTutari:c2}";
             if (method == PaymentMethods.Debit)
