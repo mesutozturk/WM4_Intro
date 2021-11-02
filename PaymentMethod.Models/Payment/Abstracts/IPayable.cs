@@ -4,7 +4,7 @@ namespace PaymentMethod.Models.Payment.Abstracts
 {
     public interface IPayable
     {
-        void Pay(decimal amount);
+        void Pay(PaymentBase payment);
         MessageStates State { get; set; }
     }
 }

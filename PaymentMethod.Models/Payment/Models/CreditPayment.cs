@@ -6,6 +6,6 @@ namespace PaymentMethod.Models.Payment.Models
     {
         public int Installment { get; set; }
         public decimal Commission { get; set; }
-
+        public Card CardInfo { get; set; }
     }
 }

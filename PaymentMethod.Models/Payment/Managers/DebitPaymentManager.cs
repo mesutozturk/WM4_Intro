@@ -1,10 +1,10 @@
-﻿using System;
-using PaymentMethod.Models.Payment.Abstracts;
+﻿using PaymentMethod.Models.Payment.Abstracts;
 using PaymentMethod.Models.Payment.Models;
+using System;
 
 namespace PaymentMethod.Models.Payment.Managers
 {
-    public class CreditPaymentManager : IPayable
+    public class DebitPaymentManager : IPayable
     {
         public MessageStates State { get; set; }
         public void Pay(PaymentBase payment)
@@ -12,8 +12,8 @@ namespace PaymentMethod.Models.Payment.Managers
             try
             {
                 //ödeme ayarları yapılır
-
-                CreditPayment credit = payment as CreditPayment;
+                
+                DebitPayment debit = payment as DebitPayment;
                 //işlem başarılı
                 State = MessageStates.Success;
 
