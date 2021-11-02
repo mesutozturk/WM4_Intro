@@ -1,6 +1,8 @@
 ﻿using PaymentMethod.Models.Payment.Models;
 using System;
 using System.Windows.Forms;
+using PaymentMethod.Models.Payment.Abstracts;
+using PaymentMethod.Models.Payment.Managers;
 
 namespace PaymentMethod
 {
@@ -33,10 +35,11 @@ namespace PaymentMethod
             }
         }
 
+        private PaymentMethods method;
         private void cmbPaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PaymentMethods method = Enum.Parse<PaymentMethods>(cmbPaymentMethod.SelectedItem.ToString());
-            PaymentMethods method2 = (PaymentMethods)Enum.Parse(typeof(PaymentMethods),cmbPaymentMethod.SelectedItem.ToString()); //2. yöntem
+            method = Enum.Parse<PaymentMethods>(cmbPaymentMethod.SelectedItem.ToString());
+            PaymentMethods method2 = (PaymentMethods)Enum.Parse(typeof(PaymentMethods), cmbPaymentMethod.SelectedItem.ToString()); //2. yöntem
             lstTaksitler.Items.Clear();
             this.Text = $"{sepetTutari:c2}";
             if (method == PaymentMethods.Debit)
@@ -50,6 +53,59 @@ namespace PaymentMethod
                     lstTaksitler.Items.Add($"{taksit} x {(sepetTutari / taksit):c2}");
                 }
             }
+        }
+
+        private void btnOdemeYap_Click(object sender, EventArgs e)
+        {
+            IPayable paymentManager;
+
+            switch (method)
+            {
+                case PaymentMethods.Credit:
+                    paymentManager = new CreditPaymentManager();
+
+                    CreditPayment payment = new CreditPayment();
+                    payment.Commission = 1.12m;
+                    payment.Installment = taksitler[lstTaksitler.SelectedIndex];
+                    payment.CustomerId = "123";
+                    payment.Total = sepetTutari;
+                    payment.CardInfo = new Card() // object initializer yöntemi ile propertylerin doldurulması
+                    {
+                        Year = 2021,
+                        Cvv = txtCvv.Text,
+                        Mount = 11,
+                        NameSurname = txtAdSoyad.Text,
+                        Number = txtCardNumber.Text
+                    };
+
+                    paymentManager.Pay(payment);
+                    break;
+                case PaymentMethods.Debit:
+                    paymentManager = new DebitPaymentManager();
+
+                    DebitPayment payment2 = new DebitPayment();
+                    payment2.Commission = 1.12m;
+                    payment2.CustomerId = "123";
+                    payment2.Total = sepetTutari;
+                    payment2.CardInfo = new Card() // object initializer yöntemi ile propertylerin doldurulması
+                    {
+                        Year = 2021,
+                        Cvv = txtCvv.Text,
+                        Mount = 11,
+                        NameSurname = txtAdSoyad.Text,
+                        Number = txtCardNumber.Text
+                    };
+                    paymentManager.Pay(payment2);
+                    break;
+                default:
+                    return;
+            }
+
+            if (paymentManager.State == MessageStates.Success)
+            {
+                MessageBox.Show("Ödeme işleminiz başarılı");
+            }
+
         }
     }
 }

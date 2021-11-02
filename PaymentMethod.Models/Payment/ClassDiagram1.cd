@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PaymentMethod.Models.Payment.Managers.CreditPaymentManager" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Payment\Managers\CreditPaymentManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PaymentMethod.Models.Payment.Managers.DebitPaymentManager" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Payment\Managers\DebitPaymentManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PaymentMethod.Models.Payment.Models.Card">
+    <Position X="3.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABCAAAAAAAEAAAAAAAAAAAAAAEAAACAAAAAA=</HashCode>
+      <FileName>Payment\Models\Card.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PaymentMethod.Models.Payment.Models.CreditPayment">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAIAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Payment\Models\CreditPayment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PaymentMethod.Models.Payment.Models.DebitPayment">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Payment\Models\DebitPayment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PaymentMethod.Models.Payment.Abstracts.PaymentBase">
+    <Position X="0.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAQBAAAAQAAAAAAAA=</HashCode>
+      <FileName>Payment\Abstracts\PaymentBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="PaymentMethod.Models.Payment.Abstracts.IPayable">
+    <Position X="10.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Payment\Abstracts\IPayable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="PaymentMethod.Models.Payment.Models.MessageStates">
+    <Position X="5.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAgAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Payment\Models\MessageStates.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PaymentMethod.Models.Payment.Models.PaymentMethods">
+    <Position X="7" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Payment\Models\PaymentMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

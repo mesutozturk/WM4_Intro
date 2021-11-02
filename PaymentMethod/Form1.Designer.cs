@@ -41,6 +41,7 @@ namespace PaymentMethod
             this.txtAdSoyad = new System.Windows.Forms.TextBox();
             this.txtCardNumber = new System.Windows.Forms.TextBox();
             this.lstTaksitler = new System.Windows.Forms.ListBox();
+            this.btnOdemeYap = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +66,7 @@ namespace PaymentMethod
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtAdSoyad);
             this.groupBox1.Controls.Add(this.txtCardNumber);
-            this.groupBox1.Location = new System.Drawing.Point(191, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 76);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(344, 134);
             this.groupBox1.TabIndex = 1;
@@ -153,16 +154,27 @@ namespace PaymentMethod
             // 
             this.lstTaksitler.FormattingEnabled = true;
             this.lstTaksitler.ItemHeight = 20;
-            this.lstTaksitler.Location = new System.Drawing.Point(541, 24);
+            this.lstTaksitler.Location = new System.Drawing.Point(362, 24);
             this.lstTaksitler.Name = "lstTaksitler";
             this.lstTaksitler.Size = new System.Drawing.Size(233, 264);
             this.lstTaksitler.TabIndex = 2;
+            // 
+            // btnOdemeYap
+            // 
+            this.btnOdemeYap.Location = new System.Drawing.Point(362, 294);
+            this.btnOdemeYap.Name = "btnOdemeYap";
+            this.btnOdemeYap.Size = new System.Drawing.Size(233, 80);
+            this.btnOdemeYap.TabIndex = 3;
+            this.btnOdemeYap.Text = "Ödeme Yap";
+            this.btnOdemeYap.UseVisualStyleBackColor = true;
+            this.btnOdemeYap.Click += new System.EventHandler(this.btnOdemeYap_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 503);
+            this.ClientSize = new System.Drawing.Size(611, 391);
+            this.Controls.Add(this.btnOdemeYap);
             this.Controls.Add(this.lstTaksitler);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cmbPaymentMethod);
@@ -189,6 +201,7 @@ namespace PaymentMethod
         private System.Windows.Forms.TextBox txtCardNumber;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListBox lstTaksitler;
+        private System.Windows.Forms.Button btnOdemeYap;
     }
 }
 
