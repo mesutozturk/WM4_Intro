@@ -35,9 +35,21 @@ namespace PaymentMethod
             }
         }
 
+        private Card yeniCard;
         private PaymentMethods method;
         private void cmbPaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //if (yeniCard == null)
+            //    yeniCard = new Card();
+
+            //yeniCard = yeniCard ?? new Card();
+            yeniCard = yeniCard ?? new Card();
+            yeniCard ??= new Card();
+
+            int a = 5;
+            a = a + 5;
+            a += 5;
+
             method = Enum.Parse<PaymentMethods>(cmbPaymentMethod.SelectedItem.ToString());
             PaymentMethods method2 = (PaymentMethods)Enum.Parse(typeof(PaymentMethods), cmbPaymentMethod.SelectedItem.ToString()); //2. yöntem
             lstTaksitler.Items.Clear();
@@ -79,6 +91,7 @@ namespace PaymentMethod
                     };
 
                     paymentManager.Pay(payment);
+                    
                     break;
                 case PaymentMethods.Debit:
                     paymentManager = new DebitPaymentManager();
@@ -106,6 +119,8 @@ namespace PaymentMethod
                 MessageBox.Show("Ödeme işleminiz başarılı");
             }
 
+            //Nullable<int> a = null;
+            int? a = null;
         }
     }
 }
