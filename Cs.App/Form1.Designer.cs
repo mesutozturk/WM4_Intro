@@ -130,6 +130,8 @@
             this.btnAtesEt.Text = "Ateş Et";
             this.btnAtesEt.UseVisualStyleBackColor = true;
             this.btnAtesEt.Click += new System.EventHandler(this.btnAtesEt_Click);
+            this.btnAtesEt.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnAtesEt_MouseDown);
+            this.btnAtesEt.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnAtesEt_MouseUp);
             // 
             // btnYenidenDoldur
             // 
