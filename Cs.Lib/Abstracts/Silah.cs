@@ -1,4 +1,4 @@
-﻿using System.Drawing;
+﻿using System.IO;
 
 namespace Cs.Lib.Abstracts
 {
@@ -7,12 +7,7 @@ namespace Cs.Lib.Abstracts
         public string Ulke { get; protected set; }
         public decimal Fiyat { get; protected set; }
         public int Hasar { get; protected set; }
-        //public PictureBox SilahResmi { get; protected set; } = new PictureBox();
-        //protected Silah()
-        //{
-        //    SilahResmi.Size = new Size(500, 400);
-        //    SilahResmi.SizeMode = PictureBoxSizeMode.StretchImage;
-        //}
+        public Stream SilahResim { get; protected set; }
     }
     public enum Silahlar : byte
     {
