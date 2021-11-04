@@ -76,7 +76,7 @@ namespace PaymentMethod.UserControls
 
         private void txtAdSoyad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsDigit(e.KeyChar) || char.IsPunctuation(e.KeyChar) || char.IsSeparator(e.KeyChar))
+            if (char.IsDigit(e.KeyChar) || char.IsPunctuation(e.KeyChar) || char.IsSeparator(e.KeyChar) || char.IsSymbol(e.KeyChar))
             {
                 e.Handled = true;
                 AdSoyadHata?.Invoke(sender, e);
