@@ -42,6 +42,7 @@ namespace PaymentMethod
             this.txtCardNumber = new System.Windows.Forms.TextBox();
             this.lstTaksitler = new System.Windows.Forms.ListBox();
             this.btnOdemeYap = new System.Windows.Forms.Button();
+            this.creditCardBox1 = new PaymentMethod.UserControls.CreditCardBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -169,11 +170,21 @@ namespace PaymentMethod
             this.btnOdemeYap.UseVisualStyleBackColor = true;
             this.btnOdemeYap.Click += new System.EventHandler(this.btnOdemeYap_Click);
             // 
+            // creditCardBox1
+            // 
+            this.creditCardBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.creditCardBox1.Location = new System.Drawing.Point(12, 225);
+            this.creditCardBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.creditCardBox1.Name = "creditCardBox1";
+            this.creditCardBox1.Size = new System.Drawing.Size(343, 93);
+            this.creditCardBox1.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 389);
+            this.Controls.Add(this.creditCardBox1);
             this.Controls.Add(this.btnOdemeYap);
             this.Controls.Add(this.lstTaksitler);
             this.Controls.Add(this.groupBox1);
@@ -202,6 +213,7 @@ namespace PaymentMethod
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListBox lstTaksitler;
         private System.Windows.Forms.Button btnOdemeYap;
+        private UserControls.CreditCardBox creditCardBox1;
     }
 }
 

@@ -39,6 +39,8 @@ namespace PaymentMethod
         private PaymentMethods method;
         private void cmbPaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ComboBox ss = sender as ComboBox;
+
             //if (yeniCard == null)
             //    yeniCard = new Card();
 
@@ -81,17 +83,18 @@ namespace PaymentMethod
                     payment.Installment = taksitler[lstTaksitler.SelectedIndex];
                     payment.CustomerId = "123";
                     payment.Total = sepetTutari;
-                    payment.CardInfo = new Card() // object initializer yöntemi ile propertylerin doldurulması
-                    {
-                        Year = 2021,
-                        Cvv = txtCvv.Text,
-                        Mount = 11,
-                        NameSurname = txtAdSoyad.Text,
-                        Number = txtCardNumber.Text
-                    };
+                    payment.CardInfo = creditCardBox1.CardInfo;
+                    //payment.CardInfo = new Card() // object initializer yöntemi ile propertylerin doldurulması
+                    //{
+                    //    Year = int.Parse(creditCardBox1.Yil),
+                    //    Cvv = creditCardBox1.Cvv,
+                    //    Mount = int.Parse(creditCardBox1.Ay),
+                    //    NameSurname = creditCardBox1.AdSoyad,
+                    //    Number = creditCardBox1.KartNo
+                    //};
 
                     paymentManager.Pay(payment);
-                    
+
                     break;
                 case PaymentMethods.Debit:
                     paymentManager = new DebitPaymentManager();
