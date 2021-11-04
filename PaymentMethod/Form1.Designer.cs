@@ -29,6 +29,7 @@ namespace PaymentMethod
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.cmbPaymentMethod = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCvv = new System.Windows.Forms.TextBox();
@@ -43,7 +44,10 @@ namespace PaymentMethod
             this.lstTaksitler = new System.Windows.Forms.ListBox();
             this.btnOdemeYap = new System.Windows.Forms.Button();
             this.creditCardBox1 = new PaymentMethod.UserControls.CreditCardBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbPaymentMethod
@@ -172,12 +176,25 @@ namespace PaymentMethod
             // 
             // creditCardBox1
             // 
+            this.creditCardBox1.AdSoyad = "";
+            this.creditCardBox1.Cvv = "";
             this.creditCardBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.creditCardBox1.KartNo = "               ";
             this.creditCardBox1.Location = new System.Drawing.Point(12, 225);
             this.creditCardBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.creditCardBox1.Name = "creditCardBox1";
             this.creditCardBox1.Size = new System.Drawing.Size(343, 93);
             this.creditCardBox1.TabIndex = 4;
+            this.creditCardBox1.AdSoyadHata += new PaymentMethod.UserControls.AdSoyadHataEvent(this.creditCardBox1_AdSoyadHata);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
             // 
             // Form1
             // 
@@ -194,6 +211,7 @@ namespace PaymentMethod
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -214,6 +232,8 @@ namespace PaymentMethod
         private System.Windows.Forms.ListBox lstTaksitler;
         private System.Windows.Forms.Button btnOdemeYap;
         private UserControls.CreditCardBox creditCardBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 

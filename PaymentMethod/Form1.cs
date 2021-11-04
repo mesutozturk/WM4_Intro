@@ -1,5 +1,6 @@
 ﻿using PaymentMethod.Models.Payment.Models;
 using System;
+using System.Threading;
 using System.Windows.Forms;
 using PaymentMethod.Models.Payment.Abstracts;
 using PaymentMethod.Models.Payment.Managers;
@@ -124,6 +125,16 @@ namespace PaymentMethod
 
             //Nullable<int> a = null;
             int? a = null;
+        }
+
+        private void creditCardBox1_AdSoyadHata(object sender, KeyPressEventArgs e)
+        {
+            ErrorProvider provider = new ErrorProvider(this);
+            provider.SetError(creditCardBox1, $"Yanlış bir karakter girdiniz: {e.KeyChar}");
+            provider.BlinkStyle = ErrorBlinkStyle.BlinkIfDifferentError;
+            //Thread.Sleep(1000);
+            //provider.Clear(); 
+            this.Text = $"Yanlış bir karakter girdiniz: {e.KeyChar}";
         }
     }
 }

@@ -1,10 +1,10 @@
-﻿using System;
-using System.Runtime.CompilerServices;
+﻿using PaymentMethod.Models.Payment.Models;
+using System;
 using System.Windows.Forms;
-using PaymentMethod.Models.Payment.Models;
 
 namespace PaymentMethod.UserControls
 {
+    public delegate void AdSoyadHataEvent(object sender, KeyPressEventArgs e);
     public partial class CreditCardBox : UserControl
     {
         public CreditCardBox()
@@ -17,7 +17,6 @@ namespace PaymentMethod.UserControls
             get => txtKartNo.Text;
             set => txtKartNo.Text = value;
         }
-
         public string AdSoyad
         {
             get => txtAdSoyad.Text;
@@ -34,17 +33,6 @@ namespace PaymentMethod.UserControls
                     cmbAy.SelectedIndex = index;
             }
         }
-
-        public Card CardInfo =>
-            new Card()
-            {
-                Year = int.Parse(this.Yil),
-                Cvv = this.Cvv,
-                Mount = int.Parse(this.Ay),
-                NameSurname = this.AdSoyad,
-                Number = this.KartNo
-            };
-
         public string Yil
         {
             get => cmbYil.SelectedItem.ToString();
@@ -61,6 +49,18 @@ namespace PaymentMethod.UserControls
             get => txtCvv.Text;
             set => txtCvv.Text = value;
         }
+        public Card CardInfo =>
+            new Card()
+            {
+                Year = int.Parse(this.Yil),
+                Cvv = this.Cvv,
+                Mount = int.Parse(this.Ay),
+                NameSurname = this.AdSoyad,
+                Number = this.KartNo
+            };
+
+        public event AdSoyadHataEvent AdSoyadHata;
+
         private void CreditCardBox_Load(object sender, EventArgs e)
         {
             for (int i = 1; i <= 12; i++)
@@ -77,7 +77,10 @@ namespace PaymentMethod.UserControls
         private void txtAdSoyad_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar) || char.IsPunctuation(e.KeyChar) || char.IsSeparator(e.KeyChar))
+            {
                 e.Handled = true;
+                AdSoyadHata?.Invoke(sender, e);
+            }
 
         }
     }
