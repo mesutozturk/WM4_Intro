@@ -32,9 +32,9 @@ namespace PaymentMethod
             this.components = new System.ComponentModel.Container();
             this.cmbPaymentMethod = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.creditCardBox1 = new PaymentMethod.UserControls.CreditCardBox();
             this.lstTaksitler = new System.Windows.Forms.ListBox();
             this.btnOdemeYap = new System.Windows.Forms.Button();
-            this.creditCardBox1 = new PaymentMethod.UserControls.CreditCardBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.groupBox1.SuspendLayout();
@@ -61,25 +61,6 @@ namespace PaymentMethod
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kart Bilgileri";
             // 
-            // lstTaksitler
-            // 
-            this.lstTaksitler.FormattingEnabled = true;
-            this.lstTaksitler.ItemHeight = 20;
-            this.lstTaksitler.Location = new System.Drawing.Point(364, 26);
-            this.lstTaksitler.Name = "lstTaksitler";
-            this.lstTaksitler.Size = new System.Drawing.Size(233, 264);
-            this.lstTaksitler.TabIndex = 2;
-            // 
-            // btnOdemeYap
-            // 
-            this.btnOdemeYap.Location = new System.Drawing.Point(12, 210);
-            this.btnOdemeYap.Name = "btnOdemeYap";
-            this.btnOdemeYap.Size = new System.Drawing.Size(337, 80);
-            this.btnOdemeYap.TabIndex = 3;
-            this.btnOdemeYap.Text = "Ödeme Yap";
-            this.btnOdemeYap.UseVisualStyleBackColor = true;
-            this.btnOdemeYap.Click += new System.EventHandler(this.btnOdemeYap_Click);
-            // 
             // creditCardBox1
             // 
             this.creditCardBox1.AdSoyad = "";
@@ -92,6 +73,25 @@ namespace PaymentMethod
             this.creditCardBox1.Size = new System.Drawing.Size(330, 102);
             this.creditCardBox1.TabIndex = 4;
             this.creditCardBox1.AdSoyadHata += new PaymentMethod.UserControls.AdSoyadHataEvent(this.creditCardBox1_AdSoyadHata);
+            // 
+            // lstTaksitler
+            // 
+            this.lstTaksitler.FormattingEnabled = true;
+            this.lstTaksitler.ItemHeight = 20;
+            this.lstTaksitler.Location = new System.Drawing.Point(364, 26);
+            this.lstTaksitler.Name = "lstTaksitler";
+            this.lstTaksitler.Size = new System.Drawing.Size(233, 264);
+            this.lstTaksitler.TabIndex = 2;
+            // 
+            // btnOdemeYap
+            // 
+            this.btnOdemeYap.Location = new System.Drawing.Point(361, 297);
+            this.btnOdemeYap.Name = "btnOdemeYap";
+            this.btnOdemeYap.Size = new System.Drawing.Size(236, 80);
+            this.btnOdemeYap.TabIndex = 3;
+            this.btnOdemeYap.Text = "Ödeme Yap";
+            this.btnOdemeYap.UseVisualStyleBackColor = true;
+            this.btnOdemeYap.Click += new System.EventHandler(this.btnOdemeYap_Click);
             // 
             // errorProvider1
             // 
