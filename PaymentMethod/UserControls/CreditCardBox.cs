@@ -60,7 +60,6 @@ namespace PaymentMethod.UserControls
             };
 
         public event AdSoyadHataEvent AdSoyadHata;
-
         private void CreditCardBox_Load(object sender, EventArgs e)
         {
             for (int i = 1; i <= 12; i++)
@@ -73,7 +72,6 @@ namespace PaymentMethod.UserControls
                 cmbYil.Items.Add($"{i:yy}");
             }
         }
-
         private void txtAdSoyad_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar) || char.IsPunctuation(e.KeyChar) || char.IsSeparator(e.KeyChar) || char.IsSymbol(e.KeyChar))
@@ -81,7 +79,6 @@ namespace PaymentMethod.UserControls
                 e.Handled = true;
                 AdSoyadHata?.Invoke(sender, e);
             }
-
         }
     }
 }
