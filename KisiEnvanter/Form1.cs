@@ -17,13 +17,11 @@ namespace KisiEnvanter
         {
             InitializeComponent();
         }
-
-        private List<Kisi> kisiler = new List<Kisi>();
-
+        
         private void ListeyiDoldur()
         {
             lstKisiler.Items.Clear();
-            foreach (Kisi kisi in kisiler)
+            foreach (Kisi kisi in KisiContext.Kisiler)
             {
                 lstKisiler.Items.Add(kisi);
             }
@@ -58,8 +56,9 @@ namespace KisiEnvanter
 
                 yeniKisi.Fotograf = resimStream.ToArray();
             }
-            kisiler.Add(yeniKisi);
+            KisiContext.Kisiler.Add(yeniKisi);
             ListeyiDoldur();
+            KisiContext.Save();
         }
 
         private Kisi seciliKisi;
@@ -94,6 +93,7 @@ namespace KisiEnvanter
                 seciliKisi.Fotograf = resimStream.ToArray();
             }
             ListeyiDoldur();
+            KisiContext.Save();
         }
 
         private void dışarıAktarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -108,9 +108,9 @@ namespace KisiEnvanter
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(List<Kisi>));
                 TextWriter writer = new StreamWriter(dialog.FileName);
-                serializer.Serialize(writer, kisiler);
+                serializer.Serialize(writer, KisiContext.Kisiler);
                 writer.Close();
-                MessageBox.Show($"{kisiler.Count} adet kişi dışarı aktarıldı.");
+                MessageBox.Show($"{KisiContext.Kisiler.Count} adet kişi dışarı aktarıldı.");
             }
         }
 
@@ -127,8 +127,8 @@ namespace KisiEnvanter
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(List<Kisi>));
                 XmlTextReader reader = new XmlTextReader(dialog.FileName);
-                kisiler = (List<Kisi>)serializer.Deserialize(reader);
-                MessageBox.Show($"{kisiler.Count} adet kişi içeri aktarıldı");
+                KisiContext.Kisiler = (List<Kisi>)serializer.Deserialize(reader);
+                MessageBox.Show($"{KisiContext.Kisiler.Count} adet kişi içeri aktarıldı");
                 ListeyiDoldur();
             }
         }
@@ -145,10 +145,10 @@ namespace KisiEnvanter
             {
                 FileStream fileStream = new FileStream(dialog.FileName, FileMode.OpenOrCreate);
                 StreamWriter writer = new StreamWriter(fileStream);
-                writer.Write(JsonConvert.SerializeObject(kisiler, Formatting.Indented));
+                writer.Write(JsonConvert.SerializeObject(KisiContext.Kisiler, Formatting.Indented));
                 writer.Close();
                 writer.Dispose();
-                MessageBox.Show($"{kisiler.Count} adet kişi dışarı aktarıldı.");
+                MessageBox.Show($"{KisiContext.Kisiler.Count} adet kişi dışarı aktarıldı.");
             }
         }
 
@@ -166,10 +166,16 @@ namespace KisiEnvanter
                 FileStream fileStream = new FileStream(dialog.FileName, FileMode.Open);
                 StreamReader reader = new StreamReader(fileStream);
                 string dosyaIcerigi = reader.ReadToEnd();
-                kisiler = JsonConvert.DeserializeObject<List<Kisi>>(dosyaIcerigi);
-                MessageBox.Show($"{kisiler.Count} adet kişi içeri aktarıldı");
+                KisiContext.Kisiler = JsonConvert.DeserializeObject<List<Kisi>>(dosyaIcerigi);
+                MessageBox.Show($"{KisiContext.Kisiler.Count} adet kişi içeri aktarıldı");
                 ListeyiDoldur();
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            KisiContext.Load();
+            ListeyiDoldur();
         }
     }
 }
