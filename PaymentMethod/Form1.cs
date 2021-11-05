@@ -19,21 +19,21 @@ namespace PaymentMethod
         private void Form1_Load(object sender, EventArgs e)
         {
             cmbPaymentMethod.DataSource = Enum.GetNames(typeof(PaymentMethods));
-            for (int i = 1; i <= 12; i++)
-            {
-                cmbAy.Items.Add($"{i:00}");
-            }
-
-            //for (int i = DateTime.Now.Year; i <= DateTime.Now.Year + 10; i++)
+            //for (int i = 1; i <= 12; i++)
             //{
-            //    cmbYil.Items.Add(i);
+            //    cmbAy.Items.Add($"{i:00}");
             //}
 
-            for (DateTime i = DateTime.Now; i <= DateTime.Now.AddYears(10); i = i.AddYears(1))
-            {
-                //cmbYil.Items.Add(i.Year.ToString().Substring(2));
-                cmbYil.Items.Add($"{i:yy}");
-            }
+            ////for (int i = DateTime.Now.Year; i <= DateTime.Now.Year + 10; i++)
+            ////{
+            ////    cmbYil.Items.Add(i);
+            ////}
+
+            //for (DateTime i = DateTime.Now; i <= DateTime.Now.AddYears(10); i = i.AddYears(1))
+            //{
+            //    //cmbYil.Items.Add(i.Year.ToString().Substring(2));
+            //    cmbYil.Items.Add($"{i:yy}");
+            //}
         }
 
         private Card yeniCard;
@@ -104,14 +104,15 @@ namespace PaymentMethod
                     payment2.Commission = 1.12m;
                     payment2.CustomerId = "123";
                     payment2.Total = sepetTutari;
-                    payment2.CardInfo = new Card() // object initializer yöntemi ile propertylerin doldurulması
-                    {
-                        Year = 2021,
-                        Cvv = txtCvv.Text,
-                        Mount = 11,
-                        NameSurname = txtAdSoyad.Text,
-                        Number = txtCardNumber.Text
-                    };
+                    payment2.CardInfo = creditCardBox1.CardInfo;
+                    //payment2.CardInfo = new Card() // object initializer yöntemi ile propertylerin doldurulması
+                    //{
+                    //    Year = 2021,
+                    //    Cvv = txtCvv.Text,
+                    //    Mount = 11,
+                    //    NameSurname = txtAdSoyad.Text,
+                    //    Number = txtCardNumber.Text
+                    //};
                     paymentManager.Pay(payment2);
                     break;
                 default:
