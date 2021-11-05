@@ -52,10 +52,13 @@ namespace KisiEnvanter
                 DogumTarihi = dtpDogumTarihi.Value,
                 Telefon = txtTelefon.Text
             };
-            MemoryStream resimStream = new MemoryStream();
-            pbResim.Image.Save(resimStream, ImageFormat.Jpeg);
+            if (pbResim.Image != null)
+            {
+                MemoryStream resimStream = new MemoryStream();
+                pbResim.Image.Save(resimStream, ImageFormat.Jpeg);
 
-            yeniKisi.Fotograf = resimStream.ToArray();
+                yeniKisi.Fotograf = resimStream.ToArray();
+            }
             kisiler.Add(yeniKisi);
             ListeyiDoldur();
         }
