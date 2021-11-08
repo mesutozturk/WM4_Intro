@@ -2,7 +2,7 @@
 
 namespace MyCoin.Models
 {
-    public class BinanceReqExchangeBody
+    public class BinanceReqExchangeBody: BinanceBase
     {
         public string Timezone { get; set; }
         public long ServerTime { get; set; }

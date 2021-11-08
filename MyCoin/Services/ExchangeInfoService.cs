@@ -15,7 +15,7 @@ namespace MyCoin.Services
 
             try
             {
-                HttpResponseMessage result= client.GetAsync(new Uri(BaseUrl)).Result;
+                HttpResponseMessage result = client.GetAsync(new Uri(BaseUrl)).Result;
                 if (result.StatusCode != HttpStatusCode.OK)
                     throw new Exception($"İstek başarısız: {result.StatusCode}");
 
