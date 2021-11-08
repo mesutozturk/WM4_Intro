@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MyCoin.Services;
 
 namespace MyCoin
 {
@@ -17,5 +18,10 @@ namespace MyCoin
             InitializeComponent();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            var result = new ExchangeInfoService().Result();
+            Console.WriteLine();
+        }
     }
 }
