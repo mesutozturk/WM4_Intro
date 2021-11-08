@@ -21,6 +21,9 @@ namespace MyCoin
         private void Form1_Load(object sender, EventArgs e)
         {
             var result = new ExchangeInfoService().Result();
+
+            var result2 = new SymbolTickerService().Result("DOGEUSDT");
+
             Console.WriteLine();
         }
     }

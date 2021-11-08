@@ -1,9 +1,8 @@
-﻿using System;
+﻿using MyCoin.Models;
+using Newtonsoft.Json;
+using System;
 using System.Net;
 using System.Net.Http;
-using System.Threading.Tasks;
-using MyCoin.Models;
-using Newtonsoft.Json;
 
 namespace MyCoin.Services
 {
