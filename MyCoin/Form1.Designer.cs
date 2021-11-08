@@ -71,6 +71,7 @@ namespace MyCoin
             this.lblSymbol.Size = new System.Drawing.Size(132, 39);
             this.lblSymbol.TabIndex = 2;
             this.lblSymbol.Text = "symbol";
+            this.lblSymbol.Click += new System.EventHandler(this.lblSymbol_Click);
             // 
             // lblFiyat
             // 

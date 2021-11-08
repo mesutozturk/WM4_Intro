@@ -3,6 +3,7 @@ using MyCoin.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -66,7 +67,7 @@ namespace MyCoin
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(_seciliSymbol == null) return;
+            if (_seciliSymbol == null) return;
 
             GetCoinInfo();
         }
@@ -87,6 +88,20 @@ namespace MyCoin
             {
                 MessageBox.Show($"{ex.Message}");
             }
+        }
+
+        private void lblSymbol_Click(object sender, EventArgs e)
+        {
+            if (_seciliSymbol == null) return;
+
+            var binanceUrl = $"https://www.binance.com/tr/trade/{_seciliSymbol.symbol}";
+
+            ProcessStartInfo psInfo = new ProcessStartInfo
+            {
+                FileName = binanceUrl,
+                UseShellExecute = true
+            };
+            Process.Start(psInfo);
         }
     }
 }
