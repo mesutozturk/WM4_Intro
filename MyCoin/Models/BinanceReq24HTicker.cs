@@ -3,21 +3,21 @@
     public class BinanceReq24HTicker
     {
         public string Symbol { get; set; }
-        public string PriceChange { get; set; }
-        public string PriceChangePercent { get; set; }
-        public string WeightedAvgPrice { get; set; }
-        public string PrevClosePrice { get; set; }
-        public string LastPrice { get; set; }
-        public string LastQty { get; set; }
-        public string BidPrice { get; set; }
-        public string BidQty { get; set; }
-        public string AskPrice { get; set; }
-        public string AskQty { get; set; }
-        public string OpenPrice { get; set; }
-        public string HighPrice { get; set; }
-        public string LowPrice { get; set; }
-        public string Volume { get; set; }
-        public string QuoteVolume { get; set; }
+        public double PriceChange { get; set; }
+        public double PriceChangePercent { get; set; }
+        public double WeightedAvgPrice { get; set; }
+        public double PrevClosePrice { get; set; }
+        public double LastPrice { get; set; }
+        public double LastQty { get; set; }
+        public double BidPrice { get; set; }
+        public double BidQty { get; set; }
+        public double AskPrice { get; set; }
+        public double AskQty { get; set; }
+        public double OpenPrice { get; set; }
+        public double HighPrice { get; set; }
+        public double LowPrice { get; set; }
+        public double Volume { get; set; }
+        public double QuoteVolume { get; set; }
         public long OpenTime { get; set; }
         public long CloseTime { get; set; }
         public int FirstId { get; set; }
