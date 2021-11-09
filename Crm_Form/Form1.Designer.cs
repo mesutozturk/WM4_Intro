@@ -37,6 +37,7 @@ namespace Crm_Form
             this.temaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kişiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ekleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,7 +94,8 @@ namespace Crm_Form
             // kişiToolStripMenuItem
             // 
             this.kişiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ekleToolStripMenuItem});
+            this.ekleToolStripMenuItem,
+            this.güncelleToolStripMenuItem});
             this.kişiToolStripMenuItem.Name = "kişiToolStripMenuItem";
             this.kişiToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.kişiToolStripMenuItem.Text = "Kişi";
@@ -104,6 +106,13 @@ namespace Crm_Form
             this.ekleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.ekleToolStripMenuItem.Text = "Ekle";
             this.ekleToolStripMenuItem.Click += new System.EventHandler(this.ekleToolStripMenuItem_Click);
+            // 
+            // güncelleToolStripMenuItem
+            // 
+            this.güncelleToolStripMenuItem.Name = "güncelleToolStripMenuItem";
+            this.güncelleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.güncelleToolStripMenuItem.Text = "Güncelle";
+            this.güncelleToolStripMenuItem.Click += new System.EventHandler(this.güncelleToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -135,6 +144,7 @@ namespace Crm_Form
         private System.Windows.Forms.ToolStripMenuItem temaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kişiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ekleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem güncelleToolStripMenuItem;
     }
 }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using Crm_Form.Formlar;
 using Crm_Form.Models;
@@ -60,6 +61,18 @@ namespace Crm_Form
                 _frmKisiEkle = new FrmKisiEkleForm();
                 _frmKisiEkle.MdiParent = this;
                 _frmKisiEkle.Show();
+            }
+        }
+
+        private FrmKisiGuncelle _frmKisiGuncelle;
+        private void güncelleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_frmKisiGuncelle == null || _frmKisiGuncelle.IsDisposed)
+            {
+                _frmKisiGuncelle = new FrmKisiGuncelle();
+                _frmKisiGuncelle.MdiParent = this;
+                _frmKisiGuncelle.Kisi = Kisiler.Last();
+                _frmKisiGuncelle.Show();
             }
         }
     }

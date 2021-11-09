@@ -6,7 +6,7 @@ namespace Crm_Form.Models
     {
         public Context()
         {
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 5; i++)
             {
                 Kisiler.Add(new Kisi()
                 {
