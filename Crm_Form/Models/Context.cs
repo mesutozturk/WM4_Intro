@@ -6,13 +6,13 @@ namespace Crm_Form.Models
     {
         public Context()
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 500; i++)
             {
                 Kisiler.Add(new Kisi()
                 {
                     Ad = Faker.NameFaker.FirstName(),
                     Soyad = Faker.NameFaker.LastName(),
-                    DogumTarihi = Faker.DateTimeFaker.DateTimeBetweenYears(1970, 1990),
+                    DogumTarihi = Faker.DateTimeFaker.BirthDay(),
                     Falan = Faker.NumberFaker.Number(1000, 9999)
                 });
             }

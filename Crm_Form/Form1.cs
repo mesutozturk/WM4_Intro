@@ -71,8 +71,24 @@ namespace Crm_Form
             {
                 _frmKisiGuncelle = new FrmKisiGuncelle();
                 _frmKisiGuncelle.MdiParent = this;
+                _frmKisiGuncelle.StartPosition = FormStartPosition.CenterParent;
                 _frmKisiGuncelle.Kisi = Kisiler.Last();
                 _frmKisiGuncelle.Show();
+            }
+        }
+        FrmKisiListele _frmKisiListele;
+        private void listeleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //https://stackoverflow.com/questions/5233502/how-to-return-a-value-from-a-form-in-c
+            _frmKisiListele = new FrmKisiListele();
+            //_frmKisiListele.MdiParent = this;
+            _frmKisiListele.StartPosition = FormStartPosition.CenterScreen;
+            _frmKisiListele.Kisiler = Kisiler;
+            var result = _frmKisiListele.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                var seciliKisi = _frmKisiListele.SeciliKisi;
+                MessageBox.Show($"Seçili kişi: {seciliKisi}");
             }
         }
     }
