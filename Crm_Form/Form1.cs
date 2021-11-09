@@ -1,5 +1,8 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 using Crm_Form.Formlar;
+using Crm_Form.Models;
 
 namespace Crm_Form
 {
@@ -39,6 +42,25 @@ namespace Crm_Form
                 _frmIceriAktar = new FrmIceriAktar();
             _frmIceriAktar.MdiParent = this;
             _frmIceriAktar.Show();
+        }
+
+        public List<Kisi> Kisiler { get; set; }
+        private void Form1_Load(object sender, System.EventArgs e)
+        {
+            var context = new Context();
+            Kisiler = context.Kisiler;
+            Console.WriteLine();
+        }
+
+        private FrmKisiEkleForm _frmKisiEkle;
+        private void ekleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_frmKisiEkle == null || _frmKisiEkle.IsDisposed)
+            {
+                _frmKisiEkle = new FrmKisiEkleForm();
+                _frmKisiEkle.MdiParent = this;
+                _frmKisiEkle.Show();
+            }
         }
     }
 }
