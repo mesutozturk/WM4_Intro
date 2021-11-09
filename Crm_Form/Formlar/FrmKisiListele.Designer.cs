@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lstKisiler = new System.Windows.Forms.ListBox();
             this.btnOk = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstKisiler
             // 
+            this.lstKisiler.ContextMenuStrip = this.contextMenuStrip1;
             this.lstKisiler.FormattingEnabled = true;
             this.lstKisiler.ItemHeight = 20;
             this.lstKisiler.Location = new System.Drawing.Point(12, 12);
@@ -52,6 +57,21 @@
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.silToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(95, 28);
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(94, 24);
+            this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+            // 
             // FrmKisiListele
             // 
             this.AcceptButton = this.btnOk;
@@ -65,6 +85,7 @@
             this.Name = "FrmKisiListele";
             this.Text = "FrmKisiListele";
             this.Load += new System.EventHandler(this.FrmKisiListele_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -73,5 +94,7 @@
 
         private System.Windows.Forms.ListBox lstKisiler;
         private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
     }
 }
