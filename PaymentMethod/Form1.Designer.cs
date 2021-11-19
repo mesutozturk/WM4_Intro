@@ -45,18 +45,21 @@ namespace PaymentMethod
             // 
             this.cmbPaymentMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPaymentMethod.FormattingEnabled = true;
-            this.cmbPaymentMethod.Location = new System.Drawing.Point(12, 12);
+            this.cmbPaymentMethod.Location = new System.Drawing.Point(10, 9);
+            this.cmbPaymentMethod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbPaymentMethod.Name = "cmbPaymentMethod";
-            this.cmbPaymentMethod.Size = new System.Drawing.Size(173, 28);
+            this.cmbPaymentMethod.Size = new System.Drawing.Size(152, 23);
             this.cmbPaymentMethod.TabIndex = 0;
             this.cmbPaymentMethod.SelectedIndexChanged += new System.EventHandler(this.cmbPaymentMethod_SelectedIndexChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.creditCardBox1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 76);
+            this.groupBox1.Location = new System.Drawing.Point(10, 57);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(344, 134);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(301, 100);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kart Bilgileri";
@@ -67,27 +70,29 @@ namespace PaymentMethod
             this.creditCardBox1.Cvv = "";
             this.creditCardBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.creditCardBox1.KartNo = "               ";
-            this.creditCardBox1.Location = new System.Drawing.Point(7, 26);
-            this.creditCardBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.creditCardBox1.Location = new System.Drawing.Point(3, 24);
+            this.creditCardBox1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.creditCardBox1.Name = "creditCardBox1";
-            this.creditCardBox1.Size = new System.Drawing.Size(330, 102);
+            this.creditCardBox1.Size = new System.Drawing.Size(289, 76);
             this.creditCardBox1.TabIndex = 4;
             this.creditCardBox1.AdSoyadHata += new PaymentMethod.UserControls.AdSoyadHataEvent(this.creditCardBox1_AdSoyadHata);
             // 
             // lstTaksitler
             // 
             this.lstTaksitler.FormattingEnabled = true;
-            this.lstTaksitler.ItemHeight = 20;
-            this.lstTaksitler.Location = new System.Drawing.Point(364, 26);
+            this.lstTaksitler.ItemHeight = 15;
+            this.lstTaksitler.Location = new System.Drawing.Point(318, 20);
+            this.lstTaksitler.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstTaksitler.Name = "lstTaksitler";
-            this.lstTaksitler.Size = new System.Drawing.Size(233, 264);
+            this.lstTaksitler.Size = new System.Drawing.Size(204, 199);
             this.lstTaksitler.TabIndex = 2;
             // 
             // btnOdemeYap
             // 
-            this.btnOdemeYap.Location = new System.Drawing.Point(361, 297);
+            this.btnOdemeYap.Location = new System.Drawing.Point(316, 223);
+            this.btnOdemeYap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOdemeYap.Name = "btnOdemeYap";
-            this.btnOdemeYap.Size = new System.Drawing.Size(236, 80);
+            this.btnOdemeYap.Size = new System.Drawing.Size(206, 60);
             this.btnOdemeYap.TabIndex = 3;
             this.btnOdemeYap.Text = "Ödeme Yap";
             this.btnOdemeYap.UseVisualStyleBackColor = true;
@@ -104,13 +109,14 @@ namespace PaymentMethod
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(609, 389);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.btnOdemeYap);
             this.Controls.Add(this.lstTaksitler);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cmbPaymentMethod);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
