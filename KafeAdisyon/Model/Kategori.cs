@@ -8,5 +8,9 @@ namespace KafeAdisyon.Model
         public string Aciklama { get; set; }
         public byte[] Fotograf { get; set; }
         public List<Urun> Urunler { get; set; } = new List<Urun>();
+        public override string ToString()
+        {
+            return Ad;
+        }
     }
 }

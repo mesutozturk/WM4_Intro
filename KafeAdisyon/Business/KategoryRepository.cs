@@ -20,7 +20,11 @@ namespace KafeAdisyon.Business
             return predicate == null ? Context.Kategoriler : Context.Kategoriler.Where(predicate).ToList();
         }
 
-
+        public void AddProduct(Kategori kategori, Urun urun)
+        {
+            Context.Kategoriler.First(x => x.Id == kategori.Id).Urunler.Add(urun);
+            Context.Save();
+        }
         public void Add(Kategori item)
         {
             Context.Kategoriler.Add(item);

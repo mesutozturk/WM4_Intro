@@ -42,10 +42,10 @@ namespace KafeAdisyon.Data
                     Debug.WriteLine(ex);
                 }
             }
-            else
-            {
-                Directory.CreateDirectory(_path);
-            }
+            //else
+            //{
+            //    Directory.CreateDirectory(_path);
+            //}
         }
 
         public void Save()
