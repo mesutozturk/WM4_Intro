@@ -23,11 +23,11 @@ namespace KafeAdisyon.Forms
         }
 
         public CafeContext Context { get; set; }
-        private KategoryRepository _kategoriRepo;
+        private KategoriRepository _kategoriRepo;
         private IRepository<Urun> _urunRepo;
         private void MenuForm_Load(object sender, EventArgs e)
         {
-            _kategoriRepo = new KategoryRepository
+            _kategoriRepo = new KategoriRepository
             {
                 Context = Context
             };

@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace KafeAdisyon.Business
 {
-    public class KategoryRepository : IRepository<Kategori>
+    public class KategoriRepository : IRepository<Kategori>
     {
         public CafeContext Context { get; set; }
 
