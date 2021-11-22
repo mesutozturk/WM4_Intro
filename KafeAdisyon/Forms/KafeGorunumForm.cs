@@ -71,24 +71,56 @@ namespace KafeAdisyon.Forms
                 if (button.Text == seciliButton.Text)
                     button.BackColor = seciliKatColor;
             }
+
+            MasaRenklendir();
+        }
+
+        private void MasaRenklendir()
+        {
+            var mevcutSiparisler = _siparisRepository.GetAll(x => x.Masa.MasaDurumu == MasaDurumlar.Dolu);
+            foreach (Button button in flpMasalar.Controls)
+            {
+                button.BackColor = defaultKatColor;
+                if (mevcutSiparisler.Any(x => x.Masa.Ad.Equals(button.Text)))
+                {
+                    button.BackColor = seciliKatColor;
+                }
+            }
         }
 
         private SiparisForm _frmSiparis;
         private void BtnMasa_Click(object sender, EventArgs e)
         {
+            Button seciliButton = sender as Button;
             if (_frmSiparis == null || _frmSiparis.IsDisposed)
             {
-                Button seciliButton = sender as Button;
                 _frmSiparis = new SiparisForm();
-                //_frmSiparis.MdiParent = this.MdiParent;
-                _frmSiparis.WindowState = FormWindowState.Maximized;
-                _frmSiparis.SeciliMasa = seciliButton.Tag as Masa;
-                _frmSiparis.MasaninSiparisleri = _siparisRepository
-                    .GetAll(x =>
-                    x.Masa.Id == _frmSiparis.SeciliMasa.Id && x.Masa.MasaDurumu == MasaDurumlar.Dolu);
-                _frmSiparis.Context = this.Context;
-                _frmSiparis.ShowDialog();
             }
+            //_frmSiparis.MdiParent = this.MdiParent;
+            _frmSiparis.WindowState = FormWindowState.Maximized;
+            _frmSiparis.SeciliMasa = seciliButton.Tag as Masa;
+            _frmSiparis.MasaninSiparisleri = _siparisRepository
+                .GetAll(x =>
+                x.Masa.Id == _frmSiparis.SeciliMasa.Id && x.Masa.MasaDurumu == MasaDurumlar.Dolu);
+            _frmSiparis.Context = this.Context;
+            DialogResult result = _frmSiparis.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                seciliButton.BackColor = seciliKatColor;
+            }
+            else if (result == DialogResult.Abort)
+            {
+                var masaninSiparisleri = _siparisRepository
+                .GetAll(x =>
+                x.Masa.Id == _frmSiparis.SeciliMasa.Id && x.Masa.MasaDurumu == MasaDurumlar.Dolu);
+                MessageBox.Show($"Masa kapatıldı: {masaninSiparisleri.Sum(x=>x.AraToplam):c2} Tutar Tahsil edildi.");
+                foreach (var siparis in masaninSiparisleri)
+                {
+                    siparis.Masa.MasaDurumu = MasaDurumlar.Bos;
+                }
+                _siparisRepository.Update();
+            }
+            MasaRenklendir();
         }
     }
 }

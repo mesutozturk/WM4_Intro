@@ -27,7 +27,7 @@ namespace KafeAdisyon.Forms
             _kategoriRepository = new KategoriRepository() { Context = Context };
             _siparisRepository = new SiparisRepository() { Context = Context };
             List<Kategori> kategoriler = _kategoriRepository.GetAll(x => x.Urunler.Count > 0);
-
+            flpKategori.Controls.Clear();
             foreach (Kategori kategori in kategoriler)
             {
                 Button btn = new Button()
@@ -45,7 +45,7 @@ namespace KafeAdisyon.Forms
             }
             lstSiparis.FullRowSelect = true;
 
-            
+            ListeyiDoldur();
         }
         private Kategori _seciliKategori;
         private void KategoriBtn_Click(object sender, EventArgs e)
@@ -116,6 +116,7 @@ x.Masa.Id == SeciliMasa.Id && x.Masa.MasaDurumu == MasaDurumlar.Dolu);
         {
             lstSiparis.Columns.Clear();
             lstSiparis.Items.Clear();
+            lstSiparis.View = View.Details;
             lstSiparis.Columns.Add("Adet");
             lstSiparis.Columns.Add("Ürün");
             lstSiparis.Columns.Add("Ara Toplam");
@@ -126,9 +127,26 @@ x.Masa.Id == SeciliMasa.Id && x.Masa.MasaDurumu == MasaDurumlar.Dolu);
                 viewItem.SubItems.Add($"{item.AraToplam:c2}");
                 lstSiparis.Items.Add(viewItem);
             }
-            
-            lstSiparis.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
 
+            lstSiparis.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            decimal toplam = 0;
+            foreach (Siparis item in MasaninSiparisleri)
+            {
+                toplam += item.AraToplam;
+            }
+            lblToplam.Text = $"{toplam:c2}";
+        }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void btnKapat_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Abort;
+            this.Close();
         }
     }
 }

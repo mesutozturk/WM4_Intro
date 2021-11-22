@@ -33,9 +33,16 @@ namespace KafeAdisyon.Forms
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.flpKategori = new System.Windows.Forms.FlowLayoutPanel();
             this.flpUrun = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lstSiparis = new System.Windows.Forms.ListView();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblToplam = new System.Windows.Forms.Label();
+            this.btnKaydet = new System.Windows.Forms.Button();
+            this.btnKapat = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -44,7 +51,7 @@ namespace KafeAdisyon.Forms
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lstSiparis, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -70,6 +77,7 @@ namespace KafeAdisyon.Forms
             // 
             // flpKategori
             // 
+            this.flpKategori.AutoScroll = true;
             this.flpKategori.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpKategori.Location = new System.Drawing.Point(3, 3);
             this.flpKategori.Name = "flpKategori";
@@ -78,26 +86,96 @@ namespace KafeAdisyon.Forms
             // 
             // flpUrun
             // 
+            this.flpUrun.AutoScroll = true;
             this.flpUrun.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpUrun.Location = new System.Drawing.Point(3, 193);
             this.flpUrun.Name = "flpUrun";
             this.flpUrun.Size = new System.Drawing.Size(858, 439);
             this.flpUrun.TabIndex = 1;
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.lstSiparis, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(873, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(367, 635);
+            this.tableLayoutPanel3.TabIndex = 1;
+            // 
             // lstSiparis
             // 
             this.lstSiparis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstSiparis.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lstSiparis.HideSelection = false;
-            this.lstSiparis.Location = new System.Drawing.Point(873, 3);
+            this.lstSiparis.Location = new System.Drawing.Point(3, 3);
             this.lstSiparis.MultiSelect = false;
             this.lstSiparis.Name = "lstSiparis";
-            this.lstSiparis.Size = new System.Drawing.Size(367, 635);
+            this.lstSiparis.Size = new System.Drawing.Size(361, 438);
             this.lstSiparis.TabIndex = 1;
             this.lstSiparis.UseCompatibleStateImageBehavior = false;
-            this.lstSiparis.View = System.Windows.Forms.View.List;
+            this.lstSiparis.View = System.Windows.Forms.View.Details;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.lblToplam, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnKaydet, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.btnKapat, 0, 2);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 447);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 3;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(361, 185);
+            this.tableLayoutPanel4.TabIndex = 2;
+            // 
+            // lblToplam
+            // 
+            this.lblToplam.AutoSize = true;
+            this.lblToplam.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblToplam.Location = new System.Drawing.Point(20, 20);
+            this.lblToplam.Margin = new System.Windows.Forms.Padding(20);
+            this.lblToplam.Name = "lblToplam";
+            this.lblToplam.Size = new System.Drawing.Size(0, 21);
+            this.lblToplam.TabIndex = 0;
+            // 
+            // btnKaydet
+            // 
+            this.btnKaydet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnKaydet.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnKaydet.Location = new System.Drawing.Point(3, 64);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(355, 55);
+            this.btnKaydet.TabIndex = 1;
+            this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
+            // 
+            // btnKapat
+            // 
+            this.btnKapat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnKapat.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnKapat.ForeColor = System.Drawing.Color.IndianRed;
+            this.btnKapat.Location = new System.Drawing.Point(3, 125);
+            this.btnKapat.Name = "btnKapat";
+            this.btnKapat.Size = new System.Drawing.Size(355, 57);
+            this.btnKapat.TabIndex = 2;
+            this.btnKapat.Text = "Kapat";
+            this.btnKapat.UseVisualStyleBackColor = true;
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // SiparisForm
             // 
+            this.AcceptButton = this.btnKaydet;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1243, 641);
@@ -107,6 +185,9 @@ namespace KafeAdisyon.Forms
             this.Load += new System.EventHandler(this.SiparisForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -118,5 +199,10 @@ namespace KafeAdisyon.Forms
         private System.Windows.Forms.FlowLayoutPanel flpKategori;
         private System.Windows.Forms.FlowLayoutPanel flpUrun;
         private System.Windows.Forms.ListView lstSiparis;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Label lblToplam;
+        private System.Windows.Forms.Button btnKaydet;
+        private System.Windows.Forms.Button btnKapat;
     }
 }
