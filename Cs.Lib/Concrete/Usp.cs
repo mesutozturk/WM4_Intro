@@ -13,7 +13,7 @@ namespace Cs.Lib.Concrete
     {
         public Usp()
         {
-            this._sarjorKapasitesi = 3;
+            this._sarjorKapasitesi = 12;
             this.Ulke = "ALmanya";
             this.Hasar = 21;
             this.Fiyat = 1400m;
